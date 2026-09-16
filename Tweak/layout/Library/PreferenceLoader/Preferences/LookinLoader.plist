@@ -1,44 +1,29 @@
 {
-	entry = {
-		cell  = PSLinkCell;
-		label = Lookin;
-		icon  = "logo.png";
-
-		items = (
-			{
-				bundle = AltList;
-				cell   = PSLinkListCell;
-				detail = ATLApplicationListMultiSelectionController;
+    entry = {
+        bundle = AltList;
+        cell = PSLinkListCell;
+        detail = ATLApplicationListMultiSelectionController;
+        isController = 1;
         overridePrincipalClass = 1;
-				isController = 1;
 
-				defaults = "dev.ret0.lookinloader";
-        key      = "enabledApps";
+        label = Lookin;
+        icon = "logo.png";
 
-				label = "Enabled Applications";
+        defaults = "dev.ret0.lookinloader";
+        key = "enabledApps";
 
-				useSearchBar                 = 1;
-        hideSearchBarWhileScrolling  = 1;
-				defaultApplicationSwitchValue = 0;
+        sections = (
+            {
+                sectionType = User;
+            },
+            {
+                sectionType = System;
+            },
+        );
+
+        useSearchBar = 1;
+        hideSearchBarWhileScrolling = 1;
+        defaultApplicationSwitchValue = 0;
         showIdentifiersAsSubtitle = 1;
-
-				sections = (
-					{
-						sectionType       = User;
-					},
-					{
-						sectionType       = System;
-					},
-				);
-			},
-			{
-				cell = PSGroupCell;
-				footerText = "This tweak is not officially supported. For more information about Lookin.app and runtime debugging see https://lookin.work";
-			},
-			{
-				cell = PSGroupCell;
-				footerText = "";
-			},
-		);
-	};
+    };
 }
